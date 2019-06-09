@@ -70,7 +70,7 @@ class Synth:
                 if phrase_punc[i] in diphone_seq.keys():
                     for diphone in diphone_seq[phrase_punc[i]]:
                         d = sa.Audio()
-                        d.load("diphones/{}".format(diphone))
+                        d.load("args.diphones/{}".format(diphone))
                         num_array = d.data
                         diphone_sounds.append(num_array)
 
@@ -84,7 +84,7 @@ class Synth:
                         diphone_sounds.append(num_array)
 
                         if phrase_punc[i] == ',':
-                            # insert 200ms of silence in place of the punctuation
+                            # insert silence in place of the punctuation
                             silence = np.zeros(2000, dtype=np.int16)
                             diphone_sounds.append(silence)
 
@@ -153,7 +153,7 @@ class Utterance:
         r = re.search(r'(\d{2})/(\d{2})/*(\d\d)*', phrase)
 
         # check if there is a date in the phrase in the specified format
-        if bool(re.search(r'(\d{2})/(\d{2})/*(\d\d)*', phrase)) == True:
+        if re.search(r'(\d{2})/(\d{2})/*(\d\d)*', phrase):
             # define the day number, month and year from the date in the phrase
             day_num = int(r.group(1))
             month_num = int(r.group(2))
@@ -312,7 +312,7 @@ if __name__ == "__main__":
     phone_seq = utt.get_phone_seq()
     diphone_seq = utt.get_diphone_seq()
     diphone_synth = Synth(wav_folder=args.diphones)
-    sound = Synth.get_wavs(wav_folder=args.diphones)
+    #sound = Synth.get_wavs(wav_folder=args.diphones)
 
 
 
