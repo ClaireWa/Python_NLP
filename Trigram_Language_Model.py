@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 11 18:00:38 2018
-
-@author: luke_
-"""
 
 import re
 import sys
@@ -227,17 +222,6 @@ print(filename, 'model perplexity:', compute_perp(processed_test_lines, new_prob
 # 
 # infile = sys.argv[1] #get input argument: the training file
 # 
-# #This bit of code gives an example of how you might extract trigram counts
-# #from a file, line by line. If you plan to use or modify this code,
-# #please ensure you understand what it is actually doing, especially at the
-# #beginning and end of each line. Depending on how you write the rest of
-# #your program, you may need to modify this code.
-# with open(infile) as f:
-#     for line in f:
-#         line = preprocess_line(line) 
-#         for j in range(len(line)-(3)):
-#             trigram = line[j:j+3]
-#             tri_counts[trigram] += 1
 # 
 # #Some example code that prints out the counts. For small input files
 # #the counts are easy to look at but for larger files you can redirect
