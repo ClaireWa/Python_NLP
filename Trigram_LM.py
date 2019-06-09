@@ -205,6 +205,3 @@ def compute_perp(lines, probs):
     return perp
 
 print(filename, 'model perplexity:', compute_perp(processed_test_lines, new_prob_dict))
-
-
-==========================================================================
